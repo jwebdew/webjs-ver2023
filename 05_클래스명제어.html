@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>클래스명 제어</title>
+    <script>
+        window.onload = function(){
+            let navi = document.getElementsByTagName('nav')[0];//nav태그
+            let menuOPen = document.getElementsByClassName('menu_open')[0]; //.menu_open
+            let menuClose = document.getElementsByClassName('menu_close')[0]; //.menu_close
+        
+            menuOPen.onclick = function(){
+                //클래스명 추가
+                //classList.add('클래스명')
+                navi.classList.add('on');
+            }
+            
+            //클래스명 제거
+            //classList.remove('클래스명')
+
+            //menuClose를 클릭했을 때 실행
+            //navi에게 클래스명 on 제거
+            menuClose.onclick = function(){
+                navi.classList.remove('on')
+            }
+
+        }//script 
+    </script>
+</head>
+<body>
+    <nav>
+        <div class="menu_open">메뉴보기</div>
+        <div class="menu_close">메뉴닫기</div>
+    </nav>
+</body>
+</html>

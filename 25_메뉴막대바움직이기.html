@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>막대바 움직이기</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        li {list-style: none;}
+        .menu {
+            width: 400px;
+            height: 40px;
+            border: 1px solid #333;
+            margin: 50px auto;
+            position: relative;
+        }
+        .menu ul {
+            height: 100%;
+            display: flex;
+            align-items: center;
+        }
+        .menu ul li {
+            width: 100px;
+            text-align: center;
+        }
+        .menu .bar {
+            width: 100px;
+            height: 4px;
+            background-color: red;
+            position: relative; 
+        }
+    </style>
+    <script src="lib/jquery-3.7.1.min.js"></script>
+    <script>
+        $(function(){
+            //li한테 마우스 올렸을 때 
+            //li의 x축값에 따라
+            //bar의 left값 이동
+            $('.menu li').mouseenter(function(){
+                console.log($(this).position().left)
+
+                $('.bar').animate({
+                    'left' : $(this).position().left
+                })
+
+            });//li.mouseenter()
+            
+        });//jquery
+    </script>
+</head>
+<body>
+    <div class="menu">
+        <ul>
+            <li>menu1</li>
+            <li>menu2</li>
+            <li>menu3</li>
+            <li>menu4</li>
+        </ul>
+        <!-- 막대바 -->
+        <div class="bar"></div>
+    </div><!-- .menu end -->
+</body>
+</html>

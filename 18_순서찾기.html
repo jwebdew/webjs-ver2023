@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>순서찾기</title>
+    <script src="lib/jquery-3.7.1.min.js"></script>
+    <script>
+        $(function(){
+            //eq() : 탐색선택자
+            //해당요소의 인덱스값 찾기
+            $('li').eq(3).css({
+                //'속성' : '속성값'
+                'background-color' : 'yellow',
+                'font-size' : '25px'
+            })
+
+            $('li').click(function(){
+                //.index() 해당요소의 순서를 알려주는, 
+                //찾아주는 메서드 
+                console.log($(this).index())
+                $('li').eq($(this).index()).css({
+                    'background-color' : 'green',
+                    'font-weight' : 'bold',
+                    'font-size' : '25px'
+                })
+
+            })
+        });//jquery end
+    </script>    
+</head>
+<body>
+    <ul>
+        <li>menu1</li>
+        <li>menu2</li>
+        <li>menu3</li>
+        <li>menu4</li>
+    </ul>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>이미지 변경</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        img {
+            width: 500px;
+            height: 500px;
+            object-fit: cover;
+            display: block;
+            margin: 100px auto;
+        }
+    </style>
+    <script src="lib/jquery-3.7.1.min.js"></script>
+    <script>
+        $(function(){
+            //attr()메서드
+            //속성의 값을 가져오거나 추가
+            let changeBtn = $('.img_change');
+            let changeImg = $('.img_change img'); 
+            //changeBtn.attr('class', 'change')
+            
+            changeBtn.click(function(){
+                // changeImg.attr('속성','속성값')
+                changeImg.attr('src','img/img03.jpg'); 
+                changeImg.css({
+                    // '속성' : '속성값'
+                    'transform' : 'scale(1.2)',
+                    'transition' : '0.7s 2s'
+                })
+                //img태그에게 클래스명 after 추가
+                changeImg.attr('class', 'after');
+                
+            });//changeBtn.click()
+
+        });//jquery end
+    </script>
+</head>
+<body>
+    <div class="img_change">
+        <img src="img/img04.jpg" alt="">
+    </div><!-- .img_change end -->
+</body>
+</html>

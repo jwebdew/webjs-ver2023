@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>메뉴</title>
+    <link rel="stylesheet" href="css/15.css">
+
+    <script src="lib/code.jquery.com_jquery-3.7.1.min.js"></script>
+    <script>
+        $(function(){
+            //메뉴아이콘을 클릭했을 때 실행
+            //내비게이션이 나타남(nav의 left:0;)
+            //검은색배경컬러 추가(.wrap에게 클래스명on추가)
+    
+            let wrap = $('.wrap');
+            let btn = $('.menu');
+            let navi = $('nav');
+
+            btn.click(function(){
+                navi.toggleClass('on');
+                wrap.toggleClass('on');
+            })
+
+        });//jquery end
+    </script>    
+</head>
+<body>
+    <div class="wrap">
+        <header>
+            <div class="inner">
+                <h1>로고</h1>
+                <div class="menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div><!-- .menu end -->
+
+                <nav>
+                    <ul>
+                        <li><a href="#">menu1</a></li>
+                        <li><a href="#">menu2</a></li>
+                        <li><a href="#">menu3</a></li>
+                        <li><a href="#">menu4</a></li>
+                        <li><a href="#">menu5</a></li>
+                    </ul>
+                </nav>
+            </div><!-- .inner end -->
+        </header>
+
+        <section>
+            <img src="img/img04.jpg" alt="">
+        </section>
+    </div><!-- .wrap end -->
+</body>
+</html>

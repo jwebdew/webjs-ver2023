@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>this</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        li {list-style: none;}
+        a {
+            text-decoration: none; 
+            color: inherit;
+        }
+        ul {
+            position: fixed;
+            top: 0;
+            left: 0;
+        }
+        ul li.on {
+            color: red;
+        }
+        #m1 {
+            height: 100vh;
+            background-color: aqua;
+        }
+        #m2 {
+            height: 100vh;
+            background-color: bisque;
+        }
+    </style>
+    <script src="lib/code.jquery.com_jquery-3.7.1.min.js"></script>
+    <script>
+        $(function(){
+            $('ul li').click(function(){
+                $('ul li').removeClass('on');
+                $(this).addClass('on');
+            })
+        })
+    </script>    
+</head>
+<body>
+    <ul>
+        <li><a href="#m1">1</a></li>
+        <li><a href="#m2">2</a></li>
+    </ul>
+
+    <section id="m1">
+
+    </section><!-- #m1 end -->
+
+    <section id="m2">
+
+    </section><!-- #m2 end -->
+</body>
+</html>

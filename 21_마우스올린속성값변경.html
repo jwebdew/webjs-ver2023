@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>속성값 변경</title>
+    <link rel="stylesheet" href="css/21.css">
+    <script src="lib/jquery-3.7.1.min.js"></script>
+    <script>
+        $(function(){
+            $('.scroll .item').mouseenter(function(){
+                //.item에게 마우스 올렸을 때 실행
+                //마우스올린 .item의 자식인 img의 src 가져옴
+                let thisImg = $(this).children('img').attr('src');
+                console.log(thisImg)
+
+                //마우스올린 .item의 자식인 h4의 텍스트 가져옴
+                let thisText = $(this).children('h4').text();
+
+                $('.item_fix div img').attr('src', thisImg);
+                $('.item_fix div h4').text(thisText);
+            });//.item.mouseenter()
+
+        });//jquery end
+    </script>
+</head>
+<body>
+    <section class="cont">
+        <h3>제목😀</h3>
+        <div class="list">
+            <div class="item_fix">
+                <div>
+                    <img src="img/img02.jpg" alt="">
+                    <h4>이미지제목 1🤩</h4>
+                </div>
+            </div><!-- .item_fix end -->
+
+            <div class="scroll">
+                <div class="item">
+                    <img src="img/img02.jpg" alt="">
+                    <h4>이미지제목 1🤩</h4>
+                </div><!-- .item end -->
+                
+                <div class="item">
+                    <img src="img/img03.jpg" alt="">
+                    <h4>이미지제목 2🤩</h4>
+                </div><!-- .item end -->
+                
+                <div class="item">
+                    <img src="img/img04.jpg" alt="">
+                    <h4>이미지제목 3🤩</h4>
+                </div><!-- .item end -->
+                
+                <div class="item">
+                    <img src="img/img05.jpg" alt="">
+                    <h4>이미지제목 4🤩</h4>
+                </div><!-- .item end -->
+                
+                <div class="item">
+                    <img src="img/img06.jpg" alt="">
+                    <h4>이미지제목 5🤩</h4>
+                </div><!-- .item end -->
+                
+                <div class="item">
+                    <img src="img/img07.jpg" alt="">
+                    <h4>이미지제목 6🤩</h4>
+                </div><!-- .item end -->
+                
+            </div><!-- .scroll end -->
+
+        </div><!-- .list end -->
+    </section><!-- .cont end -->
+</body>
+</html>

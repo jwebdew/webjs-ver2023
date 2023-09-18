@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="ko">
+   <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>아코디언메뉴 2, 3</title>
+      <link rel="stylesheet" href="css/23.css">
+      <script src="lib/jquery-3.7.1.min.js"></script>
+      <script>
+         $(function(){
+            //.gnb2 아코디언메뉴2
+            $('.gnb2 .depth01 > a').click(function(){
+               $('.gnb2 .depth02').slideUp();
+               $(this).next().slideDown();
+               //next()바로뒤에 있는 형제선택자
+               //클릭한 a의 바로뒤에 있는 형제선택자가 슬라이드다운
+
+               $('.gnb2 .depth01 > a').removeClass('on');
+               //클릭한 a한테 클래스명on추가
+               $(this).addClass('on');
+
+            });
+
+            //.gnb3 아코디언메뉴
+            // 2차메뉴가 display : none이면 
+            //슬라이드 다운
+            //2차메뉴가 display : block이면
+            //슬라이드 업
+
+            //조건문if(조건식) {
+            //    조건이 맞으면 실행
+            // } else {
+            //    조건이 맞지 않으면 실행
+            // }
+
+            $('.gnb3 .depth01 > a').click(function(){
+               if($(this).next().css('display') == 'none') {
+                  $('.gnb3 .depth02').slideUp();
+                  $(this).next().slideDown();
+                  
+                  //a한테 붙어있는 클래스명 삭제
+                  //클릭한 a한테 클래스명 추가
+                  $('.gnb3 .depth01 > a').removeClass('on');
+                  $(this).addClass('on');
+               } else {
+                  // $('.gnb3 .depth02').slideUp();
+                  $(this).next().slideUp();
+                  $(this).removeClass('on');
+                  //클릭한 a한테 클래스명 삭제
+               }
+            });//gnb3
+
+
+
+         });//jquery end
+      </script>
+   </head>
+   <body>
+      <nav class="gnb2">
+         <ul>
+            <li class="depth01">
+               <a href="#">menu1</a>
+               <ul class="depth02">
+                  <li><a href="#">menu1-1</a></li>
+                  <li><a href="#">menu1-2</a></li>
+                  <li><a href="#">menu1-3</a></li>
+                  <li><a href="#">menu1-4</a></li>
+               </ul><!-- .depth02 end -->
+            </li><!-- .depth01 end -->
+
+            <li class="depth01">
+               <a href="#">menu2</a>
+               <ul class="depth02">
+                  <li><a href="#">menu2-1</a></li>
+                  <li><a href="#">menu2-2</a></li>
+                  <li><a href="#">menu2-3</a></li>
+                  <li><a href="#">menu2-4</a></li>
+               </ul><!-- .depth02 end -->
+            </li><!-- .depth01 end -->
+
+            <li class="depth01">
+               <a href="#">menu3</a>
+               <ul class="depth02">
+                  <li><a href="#">menu3-1</a></li>
+                  <li><a href="#">menu3-2</a></li>
+                  <li><a href="#">menu3-3</a></li>
+                  <li><a href="#">menu3-4</a></li>
+               </ul><!-- .depth02 end -->
+            </li><!-- .depth01 end -->
+
+            <li class="depth01">
+               <a href="#">menu4</a>
+               <ul class="depth02">
+                  <li><a href="#">menu4-1</a></li>
+                  <li><a href="#">menu4-2</a></li>
+                  <li><a href="#">menu4-3</a></li>
+                  <li><a href="#">menu4-4</a></li>
+               </ul><!-- .depth02 end -->
+            </li><!-- .depth01 end -->
+         </ul>
+      </nav><!-- .gnb2  end -->
+
+      <nav class="gnb3">
+         <ul>
+            <li class="depth01">
+               <a href="#">menu1</a>
+               <ul class="depth02">
+                  <li><a href="#">menu1-1</a></li>
+                  <li><a href="#">menu1-2</a></li>
+                  <li><a href="#">menu1-3</a></li>
+                  <li><a href="#">menu1-4</a></li>
+               </ul><!-- .depth02 end -->
+            </li><!-- .depth01 end -->
+
+            <li class="depth01">
+               <a href="#">menu2</a>
+               <ul class="depth02">
+                  <li><a href="#">menu2-1</a></li>
+                  <li><a href="#">menu2-2</a></li>
+                  <li><a href="#">menu2-3</a></li>
+                  <li><a href="#">menu2-4</a></li>
+               </ul><!-- .depth02 end -->
+            </li><!-- .depth01 end -->
+
+            <li class="depth01">
+               <a href="#">menu3</a>
+               <ul class="depth02">
+                  <li><a href="#">menu3-1</a></li>
+                  <li><a href="#">menu3-2</a></li>
+                  <li><a href="#">menu3-3</a></li>
+                  <li><a href="#">menu3-4</a></li>
+               </ul><!-- .depth02 end -->
+            </li><!-- .depth01 end -->
+
+            <li class="depth01">
+               <a href="#">menu4</a>
+               <ul class="depth02">
+                  <li><a href="#">menu4-1</a></li>
+                  <li><a href="#">menu4-2</a></li>
+                  <li><a href="#">menu4-3</a></li>
+                  <li><a href="#">menu4-4</a></li>
+               </ul><!-- .depth02 end -->
+            </li><!-- .depth01 end -->
+         </ul>
+      </nav><!-- .gnb3  end -->
+   </body>
+</html>

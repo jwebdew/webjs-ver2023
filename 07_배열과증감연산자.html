@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>배열과증감연산자</title>
+    <script>
+        window.onload = function(){
+
+            let downBtn = document.getElementsByClassName('down')[0];  
+            let upBtn = document.getElementsByClassName('up')[0];
+            let num = document.getElementsByTagName('span')[0];
+            
+            //배열 : 여러개의 데이터값을 저장하는 공간  
+            let bgList = ['#ffffff', '#000000', '#ffcc00']
+
+            let bg = document.getElementById('bg');
+            //초기값
+            let i = 0;
+
+            //증가연산자 ++
+            //감소연산자 --
+
+            upBtn.onclick = function(){
+                //1씩 증가
+                i++;
+                console.log(i)
+
+                //문자의 길이, 데이터갯수 구하기
+                //=> length() 
+
+                //i값이 bgList보다 크거나 같을 때
+                //i = 0;
+                if(i >= bgList.length) {
+                    //조건이 맞으면 실행
+                    i = 0;
+                } 
+
+
+
+
+                //num에게 텍스트 작성 = 변수명 i
+                num.innerText = i;  
+                
+                //bg에게 스타일 배경컬러 = 컬러값
+                //컬러값 => bgList[i]
+                bg.style.backgroundColor = bgList[i]
+
+
+            }
+
+            //downBtn을 클릭했을 때 실행
+            //i감소
+            //num에게 텍스트 작성 = i
+            downBtn.onclick = function(){
+                i--;
+                num.innerText = i;
+                bg.style.backgroundColor = bgList[i]
+
+            }
+            
+        }//script
+    </script>
+</head>
+<body id="bg">
+    <div class="btn">
+        <button class="down">-</button>
+        <span>0</span>
+        <button class="up">+</button>
+    </div><!-- .btn end -->
+</body>
+</html>

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>헤더메뉴보기</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        li {list-style: none;}
+        a {text-decoration: none; color: inherit;}
+
+        header {
+            height: 100px;
+            border-bottom: 1px solid #000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: relative;
+        }
+        header .menu span {
+            width: 30px;
+            height: 3px;
+            background-color: #000;
+            display: block;
+            margin: 5px 0;
+        }
+        header nav {
+            position: absolute;
+            right: 0;
+            top: 100px;
+            padding: 20px;
+            background-color: aliceblue;
+            border: 1px solid #000;
+            display: none;
+        }
+        header nav ul li {
+            padding: 10px;
+        }
+    </style>
+
+    <script>
+        window.onload = function(){
+            let menuBtn = document.getElementsByClassName('menu')[0]; //.menu
+            let navi = document.getElementsByTagName('nav')[0];//nav
+            
+            //클릭이벤트 실행전 navi한테
+            //style을 display = 'none'
+            //엘리먼트 스타일에 적용되도록 작성
+            navi.style.display = 'none';
+
+            menuBtn.onclick = function(){
+                if(navi.style.display == 'none') {
+                    navi.style.display = 'block';
+                } else {
+                    navi.style.display = 'none';
+                }
+            }//menuBtn.onclick 
+
+
+
+            /* menuBtn을 클릭했을 때 실행
+            if(navi의 스타일이 display값이 none이다) {
+                //조건이 맞으면 실행
+                //navi 나타나기(display:block)
+            } else {
+                //조건이 맞지 않으면 
+                //navi 없애기
+            } */
+
+
+            
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <h1>
+            <a href="#">logo</a>
+        </h1>
+        <div class="menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div><!-- .menu end -->
+
+        <nav>
+            <ul>
+                <li><a href="#">menu1</a></li>
+                <li><a href="#">menu2</a></li>
+                <li><a href="#">menu3</a></li>
+                <li><a href="#">menu4</a></li>
+                <li><a href="#">menu5</a></li>
+            </ul>
+        </nav>
+    </header>
+</body>
+</html>

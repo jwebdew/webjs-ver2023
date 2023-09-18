@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>검색박스</title>
+    <link rel="stylesheet" href="css/17.css">       
+    
+    <script src="lib/jquery-3.7.1.min.js"></script>
+    <script>
+        $(function(){
+            $('.search').click(function(){
+                $('.search_box').slideToggle(700).css('display', 'flex');
+            });//.search.click()
+
+        });//jquery end
+    </script>    
+</head>
+<body>
+    <header>
+        <div class="inner">
+            <h1>
+                <a href="#">logo</a>
+            </h1>
+            <ul class="right_menu">
+                <li class="search">
+                    검색
+                </li><!-- .search end -->
+                <li class="menu">
+                    메뉴
+                </li><!-- .menu end -->
+            </ul><!-- .right_menu end -->
+        </div><!-- .inner end -->
+
+        <!-- 검색박스, 숨겨질 영역 -->
+        <div class="search_box">
+            <input type="text" placeholder="입력해주세요." />
+            <button>검색</button>
+        </div><!-- .search_box end -->
+
+    </header>
+</body>
+</html>

@@ -1,0 +1,58 @@
+@charset "utf-8";
+@font-face {
+    font-family: 'Cafe24ClassicType-Regular';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2210-2@1.0/Cafe24ClassicType-Regular.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Cafe24ClassicType-Regular';
+}
+
+.cont {
+    max-width: 1440px;
+    width: calc(100% - 30px);
+    margin: 100px auto;
+}
+
+.cont h3 {
+    font-size: 45px;
+    margin-bottom: 30px;
+}
+.cont .list {
+    display: flex;
+    justify-content: space-between;
+}
+.cont .list .item_fix {
+    width: 40%;
+}
+.cont .list .item_fix div {
+    position: sticky;
+    top: 150px;
+    left: 0;
+}
+.cont .list .item_fix img {
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+}
+.cont .list .scroll {
+    width: 58%;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.cont .list .scroll .item {
+    width: 49%;
+    margin-bottom: 40px;
+}
+.cont .list .scroll img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+}

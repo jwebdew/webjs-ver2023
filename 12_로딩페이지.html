@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>로딩페이지</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        #loading {
+            width: 100%;
+            height: 100vh;
+            background-color: #fff;
+            /* background-color: rgb(207, 207, 28); */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            position: fixed;
+            top: 0;
+            left: 0;
+        }
+        #loading img {
+            width: 30%;
+        }
+    </style>
+    <script>
+        window.onload = function(){
+            //2초뒤에 실행 => 2000
+            //setTimeout() => 일정시간뒤에 실행     
+            let loadingPage = document.getElementById('loading');
+            setTimeout(function(){
+                //2초뒤에 실행될 코드
+                loadingPage.style.opacity = '0';
+                loadingPage.style.transition = '1s';
+                loadingPage.style.transform = 'scale(0)';
+
+            }, 2000);//2초뒤에 실행
+
+        }//script end
+    </script>
+</head>
+<body>
+    <div id="loading">
+        <!-- <p>로딩중..</p> -->
+        <img src="img/icons8-처럼.gif" alt="">
+    </div><!-- #loading end -->
+    <div>메인 콘텐츠</div>
+</body>
+</html>

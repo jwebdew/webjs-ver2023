@@ -1,0 +1,47 @@
+@charset "utf-8";
+
+* {
+    margin: 0;
+    padding: 0;
+}
+li {
+    list-style: none;
+}
+a {
+    text-decoration: none;
+    color: inherit;
+}
+body {
+    text-align: center;
+}
+nav {
+    display: inline-block;
+    vertical-align: top;
+    width: 400px;
+    border: 1px solid #333;
+    text-align: center;
+}
+nav .depth01 {
+    background-color: rgb(208, 255, 255);
+}
+
+nav .depth01 > a {
+    padding: 25px 0;
+    display: block;
+    background-color: royalblue;
+    color: white;
+}
+nav .depth01 .depth02 {
+    display: none;
+}
+nav .depth01 .depth02 li {
+    padding: 10px 0;
+    border-bottom: 1px dashed #555;
+}
+.gnb2 .depth01 > a.on {
+    background-color: navy;
+}
+
+.gnb3 .depth01 > a.on {
+    background-color: rgb(255, 66, 198);
+}

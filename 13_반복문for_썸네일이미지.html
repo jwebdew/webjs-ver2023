@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ko">
+   <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>반복문 for</title>
+      <style>
+         * {
+            margin: 0;
+            padding: 0;
+         }
+
+         .gallery {
+            width: 500px;
+            border: 2px solid #333;
+            margin: 50px auto;
+         }
+
+         .gallery .big_image {
+            height: 400px;
+         }
+         .gallery .big_image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+         }
+
+         .gallery .small_image {
+            display: flex;
+         }
+         .gallery .small_image img {
+            width: calc(100% / 3);
+            height: 200px;
+            object-fit: cover;
+            border: 1px solid #333;
+         }
+      </style>
+
+      <script>
+         window.onload = function(){
+            let big = document.getElementsByClassName('big_image')[0];     
+            let bigImage = big.getElementsByTagName('img')[0];
+
+            let small = document.getElementsByClassName('small_image')[0];
+            let smallImages = small.getElementsByTagName('img');
+
+            //반복문 : 동일한 명령을 여러번 진행하거나, 
+            //반복적으로 처리
+            //for(초기값; 조건식; 증감값) {실행코드}
+
+            for(let i = 0; i < smallImages.length; i++) {
+               //(시작값0; i보다 작은이미지의 갯수 작다; i증가)
+               smallImages[i].onmouseenter = function(){
+                  console.log(smallImages[i])
+
+                  bigImage.src = smallImages[i].src
+
+               }
+
+            } //for
+         }//script 
+      </script>
+   </head>
+   <body>
+      <div class="gallery">
+         <figure class="big_image">
+            <img src="img/img02.jpg" alt="">
+         </figure><!-- .big_image end -->
+
+         <div class="small_image">
+            <img src="img/img02.jpg" alt="">
+            <img src="img/img03.jpg" alt="">
+            <img src="img/img04.jpg" alt="">
+         </div><!-- .small_image end -->
+
+      </div><!-- gallery end -->
+   </body>
+</html>

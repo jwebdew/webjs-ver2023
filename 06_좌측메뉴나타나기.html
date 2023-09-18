@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>메뉴나타나기</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        li {
+            list-style: none;
+        }
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+        header {
+            height: 100px;
+            border-bottom: 2px solid #333;
+        }
+        header .open {
+            line-height: 100px;
+            text-align: right;
+        }
+        header nav {
+            transition: 1s;
+            position: fixed;
+            right: -100%;
+            top: 0;
+            width: 80%;
+            height: 100vh;
+            background-color: #D2DE32;
+            padding: 50px;
+            box-sizing: border-box;
+        }
+        header nav.on {
+            right: 0;
+        }
+    </style>
+
+    <script>
+        window.onload = function(){
+            let navi = document.getElementsByTagName('nav')[0]; //nav태그
+            let menuOpen = document.getElementsByClassName('open')[0]; //.open
+            let menuClose = document.getElementsByClassName('close')[0];//.close
+
+            //menuOpen을 클릭했을 때 실행
+            //navi에게 클래스명 on추가 classList.??
+            menuOpen.onclick = function(){
+                navi.classList.add('on')
+            }
+
+            //menuClose 클릭했을 때 실행
+            //navi에게 클래스명 on제거
+            menuClose.onclick = function(){
+                navi.classList.remove('on')
+            }
+        }//script
+    </script>
+</head>
+<body>
+    <header>
+        <div class="open">
+            메뉴보기
+        </div><!-- .open end -->
+
+        <nav>
+            <div class="close">
+                메뉴닫기
+            </div><!-- .close end -->
+
+            <ul>
+                <li><a href="#">menu1</a></li>
+                <li><a href="#">menu2</a></li>
+                <li><a href="#">menu3</a></li>
+                <li><a href="#">menu4</a></li>
+            </ul>
+
+
+        </nav>
+    </header>
+</body>
+</html>

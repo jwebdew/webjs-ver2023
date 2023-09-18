@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>탭메뉴</title>
+    <link rel="stylesheet" href="css/19.css">
+    <script src="lib/jquery-3.7.1.min.js"></script>
+    <script>
+        $(function(){
+            //메뉴를 클릭했을 때 실행
+            //클릭한 메뉴와 동일한 순서값에
+            //클래스명 추가
+
+            $('.menu li').click(function(){
+                $('.list').removeClass('on');
+                $('.list').eq($(this).index()).addClass('on')
+
+                //.menu li에게 클래스명 on삭제
+                //클릭한 요소에게 클래스명 on추가
+                //클릭한 요소 => $(this)
+                $('.menu li').removeClass('on');
+                //$('.menu li').eq($(this).index()).addClass('on');
+                $(this).addClass('on')               
+            })
+
+        });//jquery end
+    </script>
+</head>
+<body>
+    <section class="cont">
+        <div class="inner">
+            <h3>콘텐츠 제목작성😀</h3>
+            <ul class="menu">
+                <li class="on">menu1😎</li>
+                <li>menu2😙</li>
+                <li>menu3😄</li>
+                <li>menu4😆</li>
+            </ul><!-- .menu end -->
+
+            <div class="list on">
+                <div class="item">
+                    <a href="#">
+                        <img src="img/img03.jpg" alt="">
+                        <h4>item title1</h4>
+                    </a>
+                </div><!-- .item end -->
+
+                <div class="item">
+                    <a href="#">
+                        <img src="img/img04.jpg" alt="">
+                        <h4>item title1</h4>
+                    </a>
+                </div><!-- .item end -->
+            </div><!-- .list end -->
+
+            <div class="list">
+                <div class="item">
+                    <a href="#">
+                        <img src="img/img03.jpg" alt="">
+                        <h4>item title2</h4>
+                    </a>
+                </div><!-- .item end -->
+
+                <div class="item">
+                    <a href="#">
+                        <img src="img/img04.jpg" alt="">
+                        <h4>item title2</h4>
+                    </a>
+                </div><!-- .item end -->
+            </div><!-- .list end -->
+
+            <div class="list">
+                <div class="item">
+                    <a href="#">
+                        <img src="img/img03.jpg" alt="">
+                        <h4>item title3</h4>
+                    </a>
+                </div><!-- .item end -->
+
+                <div class="item">
+                    <a href="#">
+                        <img src="img/img04.jpg" alt="">
+                        <h4>item title3</h4>
+                    </a>
+                </div><!-- .item end -->
+            </div><!-- .list end -->
+
+            <div class="list">
+                <div class="item">
+                    <a href="#">
+                        <img src="img/img03.jpg" alt="">
+                        <h4>item title4</h4>
+                    </a>
+                </div><!-- .item end -->
+
+                <div class="item">
+                    <a href="#">
+                        <img src="img/img02.jpg" alt="">
+                        <h4>item title4</h4>
+                    </a>
+                </div><!-- .item end -->
+            </div><!-- .list end / 4 -->
+
+        </div><!-- .inner end -->
+    </section><!-- .cont end -->
+</body>
+</html>

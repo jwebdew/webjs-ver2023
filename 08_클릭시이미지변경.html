@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>이미지변경</title>
+        <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        .box {
+            width: 500px;
+            margin: 0 auto;
+        }
+        .box img {
+            width: 100%;
+            height: 500px;
+            object-fit: cover;
+        }
+        .box button {
+            width: 100%;
+            height: 40px;
+        }
+    </style>
+        <script>
+        window.onload = function(){
+            let image1 = 'img/img01.jpg';
+            let image2 = 'img/img02.jpg';
+            let image3 = 'img/img03.jpg';
+            let imageList = [image1, image2, image3];
+
+            let btn = document.getElementsByTagName('button')[0]; //button
+            let image = document.getElementsByTagName('img')[0];//img
+            let num = document.getElementsByTagName('span')[0];//span 
+
+            let i = 0;
+
+            //btn을 클릭했을 때 실행
+            btn.onclick = function(){
+                //1씩 증가
+                i++; //1, 2, 3,.... 
+
+                //조건문 실행 
+                //i값이 imageList가 가지는 숫자보다 크거나 같을때
+                if(i >= imageList.length) {
+                    //i값은0
+                    i = 0; 
+                }
+
+                //image.src = imageList데이터값불러오기
+                image.src = imageList[i];
+
+                num.innerText = i + 1;
+                //span태그한테 텍스트 작성 = i(0, 1, 2) + 1
+
+
+
+            }//btn.onclick
+
+            
+
+
+
+        }//script
+    </script>
+    </head>
+    <body>
+        <div class="box">
+            <img src="img/img01.jpg" alt>
+            <button>
+                이미지변경하기<span>1</span> / 3
+            </button>
+        </div><!-- .box end -->
+    </body>
+</html>

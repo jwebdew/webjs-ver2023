@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>다크모드</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        button {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            font-size: 20px;
+        }
+        p {
+            font-size: 50px;
+            text-align: center;
+        }
+    </style>
+
+    <script>
+        window.onload = function(){
+            let bodyTag = document.getElementsByTagName('body')[0]; //body
+            let btn = document.getElementsByTagName('button')[0];//button  
+
+            //btn을 클릭했을 때 실행
+            btn.onclick = function(){
+                if(btn.innerText == '다크모드') {
+                    btn.innerText = '라이트모드';
+                    btn.style.backgroundColor = '#fff';
+                    btn.style.color = '#333';
+
+                    bodyTag.style.backgroundColor = '#333';
+                    bodyTag.style.color = '#fff';
+                } else {
+                    //조건이 맞지 않을 때 실행코드
+                    //라이트모드일 때 실행
+                    btn.innerText = '다크모드';
+                    btn.style.backgroundColor = '#333';
+                    btn.style.color = '#fff';
+
+                    bodyTag.style.backgroundColor = '#fff';
+                    bodyTag.style.color = '#333';
+
+
+                }
+            } //btn.onclick
+
+            //if(btn에 있는 텍스트가 다크모드와 같다) {
+                //같다 ==
+                //텍스트 => innerText
+                
+                //조건이 맞으면 실행
+            //     btn에 있는 텍스트를 라이트모드
+            //     bodyTag에게 스타일 배경컬러를 어두운컬러
+            //     bodyTag에게 스타일 텍스트컬러를 밝은컬러
+                
+            // }
+
+        }
+    </script>
+</head>
+<body>
+    <button>다크모드</button>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique labore nisi nostrum velit nulla officia veniam, quasi quam. Dolorem minima consequuntur officiis alias illo quisquam obcaecati, labore aspernatur impedit magnam?</p>
+</body>
+</html>
